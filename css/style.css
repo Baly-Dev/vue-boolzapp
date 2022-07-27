@@ -6,6 +6,7 @@
 
     --secondary-dark: #025143;
     --secondary-normal: #045D4B;
+    --secondary-light: #00CF9C;
 }
 
 /* globals */
@@ -45,6 +46,10 @@
     cursor: pointer;
 }
 
+i:hover{
+    color: var(--secondary-light) !important;
+}
+
 /* main */
 main{
     height: 100vh;
@@ -60,10 +65,28 @@ main{
     height: 100%;
 }
 
+.app__left{
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.app__right{
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
 /* app header */
 .app__left .header__container,
 .app__right .header__container{
     min-height: 70px;
+}
+
+.app__header__left{
+    border-top-left-radius: 4px;
+}
+
+.app__header__right{
+    border-top-right-radius: 4px;
 }
 
 .app__text p{
@@ -112,7 +135,7 @@ input:focus{
 
 /* messages */
 .app__messages{
-    height: calc(100% - 70px);
+    height: calc(100% - (70px + 55px));
     background-image: url(../img/mine.jpg);
     background-color: var(--primary-dark);
     background-position: center;
@@ -146,5 +169,17 @@ input:focus{
     margin-right: auto;
 }
 
-/**/
-.app__message__input{}
+/* messages input */
+.app__message__input{
+    height: 55px;
+    border-bottom-right-radius: 4px;
+}
+
+.message__input{
+    height: 100%;
+}
+
+.message__input:focus,
+.message__input:active{
+    background-color: var(--primary-normal);
+}

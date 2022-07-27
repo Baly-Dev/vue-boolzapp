@@ -17,12 +17,13 @@
 <body>
 
     <main id="app" class="bg__primary__light d-flex align-items-center">
-        <div class="app container w-75 border rounded">
-            <section class="app__sides row">
-                <div class="app__left border__right__primary__light col-4 px-0 bg__primary__dark">
+        <div class="app container w-75 rounded">
+            <section class="app__sides row rounded">
 
+                <!-- left -->
+                <div class="app__left border__right__primary__light col-4 px-0 bg__primary__dark">
                     <!-- header left -->
-                    <nav class="app__header__left px-3 bg__primary__normal">
+                    <nav class="app__header__left px-3 bg__primary__normal border__bottom__primary__light">
                         <div class="header__container row g-0 align-items-center">
                             <div class="col-9 d-flex align-items-center justify-content-start">
                                 <img class="img-fluid rounded-circle me-2" width="50" height="50" src="img/avatar_io.jpg" alt="">
@@ -89,15 +90,13 @@
                                 <p class="text-white">12:00</p>
                             </div>
                         </div>
-                        
                     </div>
-
                 </div>
 
+                <!-- right -->
                 <div class="app__right col-8 px-0">
-
                     <!-- header rigth -->
-                    <nav class="app__header__right  px-3 bg__primary__normal">
+                    <nav class="app__header__right px-3 bg__primary__normal border__bottom__primary__light">
                         <div class="header__container row g-0 ">
                             <div class="col-9 d-flex align-items-center justify-content-start">
                                 <img class="img-fluid rounded-circle me-2" width="50" height="50" src="img/avatar_io.jpg" alt="">
@@ -129,18 +128,20 @@
                         </div>
                     </div>
 
-                    
                     <!-- message input  -->
-                    <div class="app__message__input row g-0 bg__primary__dark border__bottom__primary__light">
+                    <div class="app__message__input row g-0 bg__primary__dark">
                         <form class="col-12 d-flex align-items-center p-2">
                             <div class="search__bar__icon bg__primary__normal rounded-start">
-                                <i class="ri-search-line fs-6 text-white cursor__pointer"></i>
+                                <i class="ri-emotion-fill text-white cursor__pointer"></i>
                             </div>
-                            <input class="search__bar__input form-control bg__primary__normal text-white border-0 rounded-0 rounded-end" type="search" placeholder="Search" aria-label="Search">
+                            <input class="message__input form-control bg__primary__normal text-white border-0 rounded-0" type="text" placeholder="Scrivi un messaggio" aria-label="Search">
+                            <div class="search__bar__icon bg__primary__normal rounded-end">
+                                <i class="ri-mic-fill text-white cursor__pointer"></i>
+                            </div>
                         </form>
                     </div>
                 </div>
-
+                
             </section>
         </div>
     </main>
