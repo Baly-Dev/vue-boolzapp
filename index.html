@@ -119,14 +119,14 @@
                             <div class="search__bar__icon bg__primary__normal rounded-start">
                                 <i class="ri-emotion-fill text-white cursor__pointer"></i>
                             </div>
-                            <input class="message__input form-control bg__primary__normal text-white border-0 rounded-0" type="text" placeholder="Scrivi un messaggio" aria-label="Search">
+                            <input @keyup.up="addNewMessage(currentContact)" v-model="newMessage" class="message__input form-control bg__primary__normal text-white border-0 rounded-0" type="text" placeholder="Scrivi un messaggio" aria-label="Search">
                             <div class="search__bar__icon bg__primary__normal rounded-end">
                                 <i class="ri-mic-fill text-white cursor__pointer"></i>
                             </div>
                         </form>
                     </div>
                 </div>
-                
+
             </section>
         </div>
     </main>

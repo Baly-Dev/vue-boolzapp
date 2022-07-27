@@ -5,6 +5,7 @@ let app = new Vue({
 
         // varaibles
         currentContact: 0,
+        newMessage: '',
 
         // contacts
         contacts: [ 
@@ -233,6 +234,24 @@ methods: {
     getCurrentContact: function(i){
         // tracking the current contact
         this.currentContact = i
+    },
+
+    addNewMessage: function(currentContact){
+
+        if(this.newMessage != ''){
+            // push new message into messages array
+            this.contacts[currentContact].messages.push(
+                {
+                    date: '10/01/2020 15:30:55',
+                    content: this.newMessage,
+                    isRecived: false,
+                    isSent: true
+                }
+            )
+        }
+
+        // clear the input bo
+        this.newMessage = ''
     }
 }
 })
