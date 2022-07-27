@@ -1,0 +1,36 @@
+/* global palette */
+:root{
+    --primary-dark: #121A21;
+    --primary-normal: #1F2D33;
+    --primary-light: #2B3942;
+
+    --secondary: #045D4B;
+}
+
+/* palette classes */
+.bg__primary__dark{
+    background-color: var(--primary-dark);
+}
+
+.bg__primary__normal{
+    background-color: var(--primary-normal);
+}
+
+.bg__primary__light{
+    background-color: var(--primary-light);
+}
+
+/* main */
+main{
+    height: 100vh;
+}
+
+/* app */
+.app{
+    height: 85%;
+}
+
+/* app sides */
+.sides{
+    height: 100%;
+}
