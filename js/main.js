@@ -21,32 +21,192 @@ let app = new Vue({
                     isSent: true
                 },
                 {
+                    date: '10/01/2020 15:30:55',
+                    content: 'No, lo porto tra poco.',
+                    isRecived: true,
+                    isSent: false
+                },
+                {
+                    date: '10/01/2020 15:30:55',
+                    content: 'Spero tu abbia portato il cane.',
+                    isRecived: false,
+                    isSent: true
+                },
+                {
                     date: '10/01/2020 16:15:22',
-                    content: 'Tutto fatto!',
+                    content: 'Si, tutto fatto!',
                     isRecived: true,
                     isSent: false
                 }],
             },
             {
-                name: 'Chris',
-                avatar: '_2',
-                isActive: false,
-                isVisible: true,
-                messages: [
-                    {
-                        date: '20/03/2020 16:30:00',
-                        content: 'Ciao come stai?',
-                        isRecived: false,
-                        isSent: true
-                    },
-                    {
-                        date: '10/01/2020 16:15:22',
-                        content: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        status: 'received',
-                        isRecived: true,
-                        isSent: false
-                    }],
-                }
+            name: 'Chris',
+            avatar: '_2',
+            isActive: false,
+            isVisible: true,
+            messages: [
+                {
+                    date: '20/03/2020 16:30:00',
+                    content: 'Ciao come stai?',
+                    isRecived: true,
+                    isSent: false
+                },
+                {
+                    date: '10/01/2020 16:15:22',
+                    content: 'Tutto bene, tu?',
+                    isRecived: false,
+                    isSent: true
+                },
+                {
+                    date: '20/03/2020 16:30:00',
+                    content: 'Abbastanza bene anche io, grazie.',
+                    isRecived: true,
+                    isSent: false
+                }],
+            },
+            {
+            name: 'Edoardo',
+            avatar: '_3',
+            isActive: false,
+            isVisible: true,
+            messages: [
+                {
+                    date: '10/01/2020 15:30:55',
+                    content: 'Hai portato a spasso il cane?',
+                    isRecived: false,
+                    isSent: true
+                },
+                {
+                    date: '10/01/2020 15:30:55',
+                    content: 'No, lo porto tra poco.',
+                    isRecived: true,
+                    isSent: false
+                },
+                {
+                    date: '10/01/2020 15:30:55',
+                    content: 'Spero tu abbia portato il cane.',
+                    isRecived: false,
+                    isSent: true
+                },
+                {
+                    date: '10/01/2020 16:15:22',
+                    content: 'Si, tutto fatto!',
+                    isRecived: true,
+                    isSent: false
+                }],
+            },
+            {
+            name: 'Travis',
+            avatar: '_5',
+            isActive: false,
+            isVisible: true,
+            messages: [
+                {
+                    date: '20/03/2020 16:30:00',
+                    content: 'Ciao come stai?',
+                    isRecived: true,
+                    isSent: false
+                },
+                {
+                    date: '10/01/2020 16:15:22',
+                    content: 'Tutto bene, tu?',
+                    isRecived: false,
+                    isSent: true
+                },
+                {
+                    date: '20/03/2020 16:30:00',
+                    content: 'Abbastanza bene anche io, grazie.',
+                    isRecived: true,
+                    isSent: false
+                }],
+            },
+            {
+            name: 'Altea',
+            avatar: '_6',
+            isActive: false,
+            isVisible: true,
+            messages: [
+                {
+                    date: '10/01/2020 15:30:55',
+                    content: 'Hai portato a spasso il cane?',
+                    isRecived: false,
+                    isSent: true
+                },
+                {
+                    date: '10/01/2020 15:30:55',
+                    content: 'No, lo porto tra poco.',
+                    isRecived: true,
+                    isSent: false
+                },
+                {
+                    date: '10/01/2020 15:30:55',
+                    content: 'Spero tu abbia portato il cane.',
+                    isRecived: false,
+                    isSent: true
+                },
+                {
+                    date: '10/01/2020 16:15:22',
+                    content: 'Si, tutto fatto!',
+                    isRecived: true,
+                    isSent: false
+                }],
+            },
+            {
+            name: 'Amleto',
+            avatar: '_7',
+            isActive: false,
+            isVisible: true,
+            messages: [
+                {
+                    date: '20/03/2020 16:30:00',
+                    content: 'Ciao come stai?',
+                    isRecived: true,
+                    isSent: false
+                },
+                {
+                    date: '10/01/2020 16:15:22',
+                    content: 'Tutto bene, tu?',
+                    isRecived: false,
+                    isSent: true
+                },
+                {
+                    date: '20/03/2020 16:30:00',
+                    content: 'Abbastanza bene anche io, grazie.',
+                    isRecived: true,
+                    isSent: false
+                }],
+                },
+            {
+            name: 'Attilio',
+            avatar: '_8',
+            isActive: false,
+            isVisible: true,
+            messages: [
+                {
+                    date: '10/01/2020 15:30:55',
+                    content: 'Hai portato a spasso il cane?',
+                    isRecived: false,
+                    isSent: true
+                },
+                {
+                    date: '10/01/2020 15:30:55',
+                    content: 'No, lo porto tra poco.',
+                    isRecived: true,
+                    isSent: false
+                },
+                {
+                    date: '10/01/2020 15:30:55',
+                    content: 'Spero tu abbia portato il cane.',
+                    isRecived: false,
+                    isSent: true
+                },
+                {
+                    date: '10/01/2020 16:15:22',
+                    content: 'Si, tutto fatto!',
+                    isRecived: true,
+                    isSent: false
+                }],
+            }
         ],
 
         // user
