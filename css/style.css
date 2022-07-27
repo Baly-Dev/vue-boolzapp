@@ -67,4 +67,25 @@ main{
     justify-content: center;
 }
 
+/* searchbar */
+.search__bar__icon{
+    height: 100%;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input:active,
+input:focus{
+    outline: none !important;
+    box-shadow: none !important;
+    
+}
+
+.search__bar__input:focus,
+.search__bar__input:active{
+    background-color: var(--primary-normal);
+}
+
 
