@@ -29,6 +29,14 @@
     background-color: var(--secondary-normal);
 }
 
+.border__primary__normal{
+    border: 1px solid var(--primary-normal);
+}
+
+.border__bottom__primary__normal{
+    border-bottom: 1px solid var(--primary-normal);
+}
+
 /* main */
 main{
     height: 100vh;
