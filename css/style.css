@@ -8,7 +8,7 @@
     --secondary-normal: #045D4B;
 }
 
-/* palette classes */
+/* globals */
 .bg__primary__dark{
     background-color: var(--primary-dark);
 }
@@ -33,8 +33,16 @@
     border: 1px solid var(--primary-normal);
 }
 
-.border__bottom__primary__normal{
-    border-bottom: 1px solid var(--primary-normal);
+.border__bottom__primary__light{
+    border-bottom: 1px solid var(--primary-light);
+}
+
+.border__right__primary__light{
+    border-right: 1px solid var(--primary-light);
+}
+
+.cursor__pointer{
+    cursor: pointer;
 }
 
 /* main */
@@ -48,7 +56,7 @@ main{
 }
 
 /* app sides */
-.sides{
+.app__sides{
     height: 100%;
 }
 
@@ -96,4 +104,47 @@ input:focus{
     background-color: var(--primary-normal);
 }
 
+/* contacts */
+.contact__active{
+    background-color: var(--primary-normal);
+}
 
+
+/* messages */
+.app__messages{
+    height: calc(100% - 70px);
+    background-image: url(../img/mine.jpg);
+    background-color: var(--primary-dark);
+    background-position: center;
+    background-size: contain;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #121a21bc;
+    z-index: 2; 
+}
+
+.app__message{
+    width: 40%;
+    margin-bottom: 15px;
+} 
+
+.message__sent{
+    background-color: var(--secondary-normal);
+    margin-left: auto;
+}
+
+.message__recived{
+    background-color: var(--primary-normal);
+    margin-right: auto;
+}
+
+/**/
+.app__message__input{}
