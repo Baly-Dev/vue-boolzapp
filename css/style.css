@@ -34,3 +34,17 @@ main{
 .sides{
     height: 100%;
 }
+
+/* app header */
+.app__left .header__container,
+.app__right .header__container{
+    min-height: 70px;
+}
+
+.header__text p{
+    font-size: 0.7em;
+}
+
+.header__icons i{
+    cursor: pointer;
+}
