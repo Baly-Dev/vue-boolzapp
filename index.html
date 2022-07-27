@@ -89,9 +89,9 @@
                     <nav class="app__header__right px-3 bg__primary__normal border__bottom__primary__light">
                         <div class="header__container row g-0 ">
                             <div class="col-9 d-flex align-items-center justify-content-start">
-                                <img class="img-fluid rounded-circle me-2" width="50" height="50" src="img/avatar_io.jpg" alt="">
+                                <img class="img-fluid rounded-circle me-2" width="50" height="50" v-bind:src="'img/avatar' + contacts[currentContact].avatar + '.jpg'" alt="">
                                 <div class="app__text">
-                                    <h4 class="text-white fs-6 m-0">Kevin</h4>
+                                    <h4 class="text-white fs-6 m-0">{{contacts[currentContact].name}}</h4>
                                     <p class="mb-0 fw-light text-white">Ultimo accesso oggi alle 12:00</p>
                                 </div>
                             </div>

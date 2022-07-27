@@ -3,15 +3,16 @@ let app = new Vue({
     el: '#app',
     data: {
 
-        // classes varaibles
+        // varaibles
         isActive: false,
+        currentContact: 0,
 
         // contacts
         contacts: [ 
             {
             name: 'Michele',
             avatar: '_1',
-            isActive: false,
+            isActive: true,
             isVisible: true,
             messages: [
                 {
@@ -51,7 +52,7 @@ let app = new Vue({
         }
 },
 methods: {
-    setActive(i){
+    setActive: function(i){
         // remove active classes from all contacts
         this.contacts.forEach(contact => {
             contact.isActive = false
@@ -63,6 +64,9 @@ methods: {
         }else{
             this.contacts[i].isActive = false
         }
+
+         // tracking the current contact
+        this.currentContact = i
     }
 }
 })
