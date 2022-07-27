@@ -26,9 +26,9 @@
                     <nav class="app__header__left px-3 bg__primary__normal border__bottom__primary__light">
                         <div class="header__container row g-0 align-items-center">
                             <div class="col-9 d-flex align-items-center justify-content-start">
-                                <img class="img-fluid rounded-circle me-2" width="50" height="50" src="img/avatar_io.jpg" alt="">
+                                <img class="img-fluid rounded-circle me-2" width="50" height="50" v-bind:src="'img/avatar' + currentUser.avatar + '.jpg'" alt="">
                                 <div class="app__text">
-                                    <h4 class="text-white fs-6 m-0">Kevin</h4>
+                                    <h4 class="text-white fs-6 m-0">{{currentUser.name}}</h4>
                                 </div>
                             </div>
                             <div class="header__icons col-3 d-flex align-items-center justify-content-end p-0">
@@ -65,31 +65,21 @@
                     <!-- contacts  -->
                     <div class="app__contacts row g-0">
 
-                        <div class="app__contact col-12 d-flex justify-content-between p-3 contact__active border__bottom__primary__light cursor__pointer">
+                        <div v-for="(contact, i) in contacts" v-on:click="setActive(i)" v-bind:class="{contact__active: contact.isActive}" class="app__contact col-12 d-flex justify-content-between p-3 border__bottom__primary__light cursor__pointer">
+                            
                             <div class="contacts__info d-flex align-items-center">
-                                <img class="img-fluid rounded-circle me-2" width="50" height="50" src="img/avatar_io.jpg" alt="">
+                                <img class="img-fluid rounded-circle me-2" width="50" height="50" v-bind:src="'img/avatar' + contact.avatar + '.jpg' " alt="">
                                 <div class="app__text">
-                                    <h4 class="text-white fs-6 m-0">Kevin</h4>
+                                    <h4 class="text-white fs-6 m-0">{{contact.name}}</h4>
                                     <p class="mb-0 fw-light text-white">Ultimo messaggio inviato</p>
                                 </div>
                             </div>
                             <div class="contacts__info app__text">
                                 <p class="text-white">12:00</p>
                             </div>
+
                         </div>
 
-                        <div class="app__contact col-12 d-flex justify-content-between p-3 border__bottom__primary__light cursor__pointer">
-                            <div class="contacts__info d-flex align-items-center">
-                                <img class="img-fluid rounded-circle me-2" width="50" height="50" src="img/avatar_io.jpg" alt="">
-                                <div class="app__text">
-                                    <h4 class="text-white fs-6 m-0">Kevin</h4>
-                                    <p class="mb-0 fw-light text-white">Ultimo messaggio inviato</p>
-                                </div>
-                            </div>
-                            <div class="contacts__info app__text">
-                                <p class="text-white">12:00</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -152,7 +142,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 
     <!-- vuejs -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
     <!-- mine -->
     <script type="text/javascript" src="js/main.js"></script>
