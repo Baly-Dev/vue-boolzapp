@@ -4,7 +4,8 @@
     --primary-normal: #1F2D33;
     --primary-light: #2B3942;
 
-    --secondary: #045D4B;
+    --secondary-dark: #025143;
+    --secondary-normal: #045D4B;
 }
 
 /* palette classes */
@@ -18,6 +19,14 @@
 
 .bg__primary__light{
     background-color: var(--primary-light);
+}
+
+.bg__secondary__dark{
+    background-color: var(--secondary-dark);
+}
+
+.bg__secondary__normal{
+    background-color: var(--secondary-normal);
 }
 
 /* main */
@@ -41,10 +50,21 @@ main{
     min-height: 70px;
 }
 
-.header__text p{
+.app__text p{
     font-size: 0.7em;
 }
 
 .header__icons i{
     cursor: pointer;
 }
+
+/* notification */
+.notification__icon{
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
