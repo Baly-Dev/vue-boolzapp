@@ -4,7 +4,6 @@ let app = new Vue({
     data: {
 
         // varaibles
-        isActive: false,
         currentContact: 0,
 
         // contacts
@@ -17,13 +16,15 @@ let app = new Vue({
             messages: [
                 {
                     date: '10/01/2020 15:30:55',
-                    message: 'Hai portato a spasso il cane?',
-                    status: 'sent'
+                    content: 'Hai portato a spasso il cane?',
+                    isRecived: false,
+                    isSent: true
                 },
                 {
                     date: '10/01/2020 16:15:22',
-                    message: 'Tutto fatto!',
-                    status: 'received'
+                    content: 'Tutto fatto!',
+                    isRecived: true,
+                    isSent: false
                 }],
             },
             {
@@ -34,13 +35,16 @@ let app = new Vue({
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
-                        message: 'Ciao come stai?',
-                        status: 'sent'
+                        content: 'Ciao come stai?',
+                        isRecived: false,
+                        isSent: true
                     },
                     {
                         date: '10/01/2020 16:15:22',
-                        message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        status: 'received'
+                        content: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                        status: 'received',
+                        isRecived: true,
+                        isSent: false
                     }],
                 }
         ],
@@ -64,8 +68,10 @@ methods: {
         }else{
             this.contacts[i].isActive = false
         }
+    },
 
-         // tracking the current contact
+    getCurrentContact: function(i){
+        // tracking the current contact
         this.currentContact = i
     }
 }

@@ -65,7 +65,7 @@
                     <!-- contacts  -->
                     <div class="app__contacts row g-0">
 
-                        <div v-for="(contact, i) in contacts" v-on:click="setActive(i)" v-bind:class="{contact__active: contact.isActive}" class="app__contact col-12 d-flex justify-content-between p-3 border__bottom__primary__light cursor__pointer">
+                        <div v-for="(contact, i) in contacts" v-on:click="setActive(i), getCurrentContact(i)" v-bind:class="{contact__active: contact.isActive}" class="app__contact col-12 d-flex justify-content-between p-3 border__bottom__primary__light cursor__pointer">
                             
                             <div class="contacts__info d-flex align-items-center">
                                 <img class="img-fluid rounded-circle me-2" width="50" height="50" v-bind:src="'img/avatar' + contact.avatar + '.jpg' " alt="">
@@ -106,13 +106,8 @@
                     <!-- messages -->
                     <div class="app__messages position-relative row g-0">
                         <div class="overlay p-4 col-12">
-                            <div class="app__message message__sent py-2 px-3 rounded  app__text d-flex flex-column">
-                                <p class="text-white fs-6 m-0">Lorem ipsum dolor sit amet</p>
-                                <p class="text-white ms-auto m-0">12:00</p>
-                            </div>
-
-                            <div class="app__message message__recived py-2 px-3 rounded  app__text d-flex flex-column">
-                                <p class="text-white fs-6 m-0">Lorem ipsum dolor sit amet</p>
+                            <div v-for="(message) in contacts[currentContact].messages" v-bind:class="{message__sent: message.isSent, message__recived: message.isRecived}" class="app__message py-2 px-3 rounded  app__text d-flex flex-column">
+                                <p class="text-white fs-6 m-0">{{message.content}}</p>
                                 <p class="text-white ms-auto m-0">12:00</p>
                             </div>
                         </div>
