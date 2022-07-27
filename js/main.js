@@ -6,6 +6,7 @@ let app = new Vue({
         // varaibles
         currentContact: 0,
         newMessage: '',
+        isAdded: false,
 
         // contacts
         contacts: [ 
@@ -217,6 +218,11 @@ let app = new Vue({
         }
 },
 methods: {
+    getCurrentContact: function(i){
+        // tracking the current contact
+        this.currentContact = i
+    },
+
     setActive: function(i){
         // remove active classes from all contacts
         this.contacts.forEach(contact => {
@@ -231,15 +237,9 @@ methods: {
         }
     },
 
-    getCurrentContact: function(i){
-        // tracking the current contact
-        this.currentContact = i
-    },
-
     addNewMessage: function(currentContact){
-
+        // push new message into messages array
         if(this.newMessage != ''){
-            // push new message into messages array
             this.contacts[currentContact].messages.push(
                 {
                     date: '10/01/2020 15:30:55',
@@ -248,10 +248,26 @@ methods: {
                     isSent: true
                 }
             )
+            this.isAdded = true
         }
 
-        // clear the input bo
+        // clear the input box
         this.newMessage = ''
+
+        // add reply to the added message
+        if(this.isAdded){
+            setTimeout(() => {
+                this.contacts[currentContact].messages.push(
+                    {
+                        date: '10/01/2020 15:30:55',
+                        content: 'Ok',
+                        isRecived: true,
+                        isSent: false
+                    }
+                )
+            }, 1000)
+            this.isAdded = false
+        }   
     }
 }
 })
