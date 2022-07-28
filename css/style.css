@@ -198,9 +198,14 @@ input:focus{
 }
 
 .message__popup{
+    display: flex;
     height: 60px;
     width: 180px;
     right: -15px;
     top: 40px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.hide__popup{
+    display: none !important;
 }

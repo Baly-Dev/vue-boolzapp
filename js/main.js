@@ -8,7 +8,6 @@ let app = new Vue({
         // messages handling
         newMessage: '',
         isAdded: false,
-        isVisible: false,
 
         // filter input
         filterCriteria: '',
@@ -23,24 +22,28 @@ let app = new Vue({
                 {
                     date: '10/01/2020 15:30:55',
                     content: 'Hai portato a spasso il cane?',
+                    isNotVisible: true,
                     isRecived: false,
                     isSent: true
                 },
                 {
                     date: '10/01/2020 15:30:55',
                     content: 'No, lo porto tra poco.',
+                    isNotVisible: true,
                     isRecived: true,
                     isSent: false
                 },
                 {
                     date: '10/01/2020 15:30:55',
                     content: 'Spero tu abbia portato il cane.',
+                    isNotVisible: true,
                     isRecived: false,
                     isSent: true
                 },
                 {
                     date: '10/01/2020 16:15:22',
                     content: 'Si, tutto fatto!',
+                    isNotVisible: true,
                     isRecived: true,
                     isSent: false
                 }],
@@ -53,18 +56,21 @@ let app = new Vue({
                 {
                     date: '20/03/2020 16:30:00',
                     content: 'Ciao come stai?',
+                    isNotVisible: true,
                     isRecived: true,
                     isSent: false
                 },
                 {
                     date: '10/01/2020 16:15:22',
                     content: 'Tutto bene, tu?',
+                    isNotVisible: true,
                     isRecived: false,
                     isSent: true
                 },
                 {
                     date: '20/03/2020 16:30:00',
                     content: 'Abbastanza bene anche io, grazie.',
+                    isNotVisible: true,
                     isRecived: true,
                     isSent: false
                 }],
@@ -77,24 +83,28 @@ let app = new Vue({
                 {
                     date: '10/01/2020 15:30:55',
                     content: 'Hai portato a spasso il cane?',
+                    isNotVisible: true,
                     isRecived: false,
                     isSent: true
                 },
                 {
                     date: '10/01/2020 15:30:55',
                     content: 'No, lo porto tra poco.',
+                    isNotVisible: true,
                     isRecived: true,
                     isSent: false
                 },
                 {
                     date: '10/01/2020 15:30:55',
                     content: 'Spero tu abbia portato il cane.',
+                    isNotVisible: true,
                     isRecived: false,
                     isSent: true
                 },
                 {
                     date: '10/01/2020 16:15:22',
                     content: 'Si, tutto fatto!',
+                    isNotVisible: true,
                     isRecived: true,
                     isSent: false
                 }],
@@ -107,18 +117,21 @@ let app = new Vue({
                 {
                     date: '20/03/2020 16:30:00',
                     content: 'Ciao come stai?',
+                    isNotVisible: true,
                     isRecived: true,
                     isSent: false
                 },
                 {
                     date: '10/01/2020 16:15:22',
                     content: 'Tutto bene, tu?',
+                    isNotVisible: true,
                     isRecived: false,
                     isSent: true
                 },
                 {
                     date: '20/03/2020 16:30:00',
                     content: 'Abbastanza bene anche io, grazie.',
+                    isNotVisible: true,
                     isRecived: true,
                     isSent: false
                 }],
@@ -131,24 +144,28 @@ let app = new Vue({
                 {
                     date: '10/01/2020 15:30:55',
                     content: 'Hai portato a spasso il cane?',
+                    isNotVisible: true,
                     isRecived: false,
                     isSent: true
                 },
                 {
                     date: '10/01/2020 15:30:55',
                     content: 'No, lo porto tra poco.',
+                    isNotVisible: true,
                     isRecived: true,
                     isSent: false
                 },
                 {
                     date: '10/01/2020 15:30:55',
                     content: 'Spero tu abbia portato il cane.',
+                    isNotVisible: true,
                     isRecived: false,
                     isSent: true
                 },
                 {
                     date: '10/01/2020 16:15:22',
                     content: 'Si, tutto fatto!',
+                    isNotVisible: true,
                     isRecived: true,
                     isSent: false
                 }],
@@ -161,18 +178,21 @@ let app = new Vue({
                 {
                     date: '20/03/2020 16:30:00',
                     content: 'Ciao come stai?',
+                    isNotVisible: true,
                     isRecived: true,
                     isSent: false
                 },
                 {
                     date: '10/01/2020 16:15:22',
                     content: 'Tutto bene, tu?',
+                    isNotVisible: true,
                     isRecived: false,
                     isSent: true
                 },
                 {
                     date: '20/03/2020 16:30:00',
                     content: 'Abbastanza bene anche io, grazie.',
+                    isNotVisible: true,
                     isRecived: true,
                     isSent: false
                 }],
@@ -185,24 +205,28 @@ let app = new Vue({
                 {
                     date: '10/01/2020 15:30:55',
                     content: 'Hai portato a spasso il cane?',
+                    isNotVisible: true,
                     isRecived: false,
                     isSent: true
                 },
                 {
                     date: '10/01/2020 15:30:55',
                     content: 'No, lo porto tra poco.',
+                    isNotVisible: true,
                     isRecived: true,
                     isSent: false
                 },
                 {
                     date: '10/01/2020 15:30:55',
                     content: 'Spero tu abbia portato il cane.',
+                    isNotVisible: true,
                     isRecived: false,
                     isSent: true
                 },
                 {
                     date: '10/01/2020 16:15:22',
                     content: 'Si, tutto fatto!',
+                    isNotVisible: true,
                     isRecived: true,
                     isSent: false
                 }],
@@ -267,6 +291,7 @@ let app = new Vue({
                     {
                         date: '10/01/2020 15:30:55',
                         content: this.newMessage,
+                        isNotVisible: true,
                         isRecived: false,
                         isSent: true
                     }
@@ -284,6 +309,7 @@ let app = new Vue({
                         {
                             date: '10/01/2020 15:30:55',
                             content: 'Ok',
+                            isNotVisible: true,
                             isRecived: true,
                             isSent: false
                         }
@@ -293,8 +319,17 @@ let app = new Vue({
             }   
         },
 
-        deleteMessage: function(currentContact, x){
-            return this.contacts[currentContact].messages.splice(x, 1)
+        showPopup: function(currentContact, i){
+            // add visible classes to the current message popup
+            if(this.contacts[currentContact].messages[i].isNotVisible == true){
+                this.contacts[currentContact].messages[i].isNotVisible = false
+            }else{
+                this.contacts[currentContact].messages[i].isNotVisible = true 
+            }
+        },
+
+        deleteMessage: function(currentContact, i){
+            return this.contacts[currentContact].messages.splice(i, 1)
         }
     }
 })
