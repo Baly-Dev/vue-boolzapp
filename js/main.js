@@ -2,11 +2,15 @@
 let app = new Vue({
     el: '#app',
     data: {
-
-        // varaibles
+        // contacts tracking
         currentContact: 0,
+
+        // messages handling
         newMessage: '',
         isAdded: false,
+
+        // filter input
+        filterCriteria: '',
 
         // contacts
         contacts: [ 
@@ -179,7 +183,7 @@ let app = new Vue({
                 }],
                 },
             {
-            name: 'Attilio',
+            name: 'Alessio',
             avatar: '_8',
             isActive: false,
             isVisible: true,
@@ -236,7 +240,7 @@ methods: {
             this.contacts[i].isActive = false
         }
     },
-
+    
     addNewMessage: function(currentContact){
         // push new message into messages array
         if(this.newMessage != ''){
@@ -268,6 +272,29 @@ methods: {
             }, 1000)
             this.isAdded = false
         }   
+    },
+
+    filterContacts: function(){
+        // lower case filterCriteria
+        const query = this.filterCriteria.toLowerCase()
+
+        // array for filtred contacts
+        let filtredContacts;
+
+        if(query != ''){
+            filtredContacts = this.contacts.filter((contact) => {
+                const lowerContact = contact.name.toLowerCase()
+                // filter check
+                if(lowerContact.includes(query)){
+                    return contact
+                }
+            })
+        }
+
+        // assign filtred contacts to main array
+        if(filtredContacts.length > 0){
+            this.contacts = filtredContacts
+        }
     }
 }
 })
