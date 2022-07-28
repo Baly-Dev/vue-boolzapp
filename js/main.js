@@ -8,6 +8,7 @@ let app = new Vue({
         // messages handling
         newMessage: '',
         isAdded: false,
+        isVisible: false,
 
         // filter input
         filterCriteria: '',
@@ -18,7 +19,6 @@ let app = new Vue({
             name: 'Michele',
             avatar: '_1',
             isActive: true,
-            isVisible: true,
             messages: [
                 {
                     date: '10/01/2020 15:30:55',
@@ -49,7 +49,6 @@ let app = new Vue({
             name: 'Chris',
             avatar: '_2',
             isActive: false,
-            isVisible: true,
             messages: [
                 {
                     date: '20/03/2020 16:30:00',
@@ -74,7 +73,6 @@ let app = new Vue({
             name: 'Edoardo',
             avatar: '_3',
             isActive: false,
-            isVisible: true,
             messages: [
                 {
                     date: '10/01/2020 15:30:55',
@@ -105,7 +103,6 @@ let app = new Vue({
             name: 'Travis',
             avatar: '_5',
             isActive: false,
-            isVisible: true,
             messages: [
                 {
                     date: '20/03/2020 16:30:00',
@@ -130,7 +127,6 @@ let app = new Vue({
             name: 'Altea',
             avatar: '_6',
             isActive: false,
-            isVisible: true,
             messages: [
                 {
                     date: '10/01/2020 15:30:55',
@@ -161,7 +157,6 @@ let app = new Vue({
             name: 'Amleto',
             avatar: '_7',
             isActive: false,
-            isVisible: true,
             messages: [
                 {
                     date: '20/03/2020 16:30:00',
@@ -186,7 +181,6 @@ let app = new Vue({
             name: 'Alessio',
             avatar: '_8',
             isActive: false,
-            isVisible: true,
             messages: [
                 {
                     date: '10/01/2020 15:30:55',
@@ -220,81 +214,87 @@ let app = new Vue({
             name: 'Kevin',
             avatar: '_me'
         }
-},
-methods: {
-    getCurrentContact: function(i){
-        // tracking the current contact
-        this.currentContact = i
     },
+    methods: {
+        // contacts
+        getCurrentContact: function(i){
+            // tracking the current contact
+            this.currentContact = i
+        },
 
-    setActive: function(i){
-        // remove active classes from all contacts
-        this.contacts.forEach(contact => {
-            contact.isActive = false
-        });
+        setActive: function(i){
+            // remove active classes from all contacts
+            this.contacts.forEach(contact => {
+                contact.isActive = false
+            });
 
-        // add active classes to the current contact
-        if(this.contacts[i].isActive == false){
-            this.contacts[i].isActive = true
-        }else{
-            this.contacts[i].isActive = false
-        }
-    },
-    
-    addNewMessage: function(currentContact){
-        // push new message into messages array
-        if(this.newMessage != ''){
-            this.contacts[currentContact].messages.push(
-                {
-                    date: '10/01/2020 15:30:55',
-                    content: this.newMessage,
-                    isRecived: false,
-                    isSent: true
-                }
-            )
-            this.isAdded = true
-        }
+            // add active classes to the current contact
+            if(this.contacts[i].isActive == false){
+                this.contacts[i].isActive = true
+            }else{
+                this.contacts[i].isActive = false
+            }
+        },
 
-        // clear the input box
-        this.newMessage = ''
+        filterContacts: function(){
+            // lower case filterCriteria
+            const query = this.filterCriteria.toLowerCase()
 
-        // add reply to the added message
-        if(this.isAdded){
-            setTimeout(() => {
+            // array for filtred contacts
+            let filtredContacts;
+
+            if(query != ''){
+                filtredContacts = this.contacts.filter((contact) => {
+                    const lowerContact = contact.name.toLowerCase()
+                    // filter check
+                    if(lowerContact.includes(query)){
+                        return contact
+                    }
+                })
+            }
+
+            // assign filtred contacts to main array
+            if(filtredContacts.length > 0){
+                this.contacts = filtredContacts
+            }
+        },
+
+        // messages
+        addNewMessage: function(currentContact){
+            // push new message into messages array
+            if(this.newMessage != ''){
                 this.contacts[currentContact].messages.push(
                     {
                         date: '10/01/2020 15:30:55',
-                        content: 'Ok',
-                        isRecived: true,
-                        isSent: false
+                        content: this.newMessage,
+                        isRecived: false,
+                        isSent: true
                     }
                 )
-            }, 1000)
-            this.isAdded = false
-        }   
-    },
+                this.isAdded = true
+            }
 
-    filterContacts: function(){
-        // lower case filterCriteria
-        const query = this.filterCriteria.toLowerCase()
+            // clear the input box
+            this.newMessage = ''
 
-        // array for filtred contacts
-        let filtredContacts;
+            // add reply to the added message
+            if(this.isAdded){
+                setTimeout(() => {
+                    this.contacts[currentContact].messages.push(
+                        {
+                            date: '10/01/2020 15:30:55',
+                            content: 'Ok',
+                            isRecived: true,
+                            isSent: false
+                        }
+                    )
+                }, 1000)
+                this.isAdded = false
+            }   
+        },
 
-        if(query != ''){
-            filtredContacts = this.contacts.filter((contact) => {
-                const lowerContact = contact.name.toLowerCase()
-                // filter check
-                if(lowerContact.includes(query)){
-                    return contact
-                }
-            })
-        }
-
-        // assign filtred contacts to main array
-        if(filtredContacts.length > 0){
-            this.contacts = filtredContacts
+        deleteMessage: function(currentContact, x){
+            return this.contacts[currentContact].messages.splice(x, 1)
         }
     }
-}
 })

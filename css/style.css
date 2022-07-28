@@ -159,7 +159,7 @@ input:focus{
 .app__message{
     width: 40%;
     margin-bottom: 15px;
-} 
+}
 
 .message__sent{
     background-color: var(--secondary-normal);
@@ -169,6 +169,17 @@ input:focus{
 .message__recived{
     background-color: var(--primary-normal);
     margin-right: auto;
+}
+
+.app__message i{
+    right: 10px;
+    top: 0;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.app__message:hover i{
+    visibility: visible;
 }
 
 /* messages input */
@@ -184,4 +195,12 @@ input:focus{
 .message__input:focus,
 .message__input:active{
     background-color: var(--primary-normal);
+}
+
+.message__popup{
+    height: 60px;
+    width: 180px;
+    right: -15px;
+    top: 40px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
